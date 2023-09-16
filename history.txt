@@ -1,0 +1,1000 @@
+   18  tar xzf ideaIC-2020.2.2.tar.gz 
+   19  ln -s idea-IC-202.7319.50 intellij
+   20  sudo nano /etc/environment 
+   21  cd ~
+   22  mv Downloads/pycharm-community-2020.2.2.tar.gz /opt/manual
+   23  cd /opt/manual/
+   24  tar xzf pycharm-community-2020.2.2.tar.gz 
+   25  ln -s pycharm-community-2020.2.2 pycharm
+   26  cd ~
+   27  source /etc/environment 
+   28  idea
+   29  ll /opt/manual/intellij/bin/
+   30  idea.sh
+   31  source /etc/environment 
+   32  idea.sh
+   33  spark-shell
+   34  pycharm.sh 
+   35  sudo systemctl enable docker
+   36  sudo reboot now
+   37  sudo -u postgresql psql
+   38  sudo -u postgres psql
+   39  psql -h localhost -W -d homecredit -c "\copy credit_card_balance FROM '/home/train/datasets/home-credit-default-risk/credit_card_balance.csv' DELIMITERS ',' CSV HEADER;"
+   40  psql -h localhost -W -d homecredit -c "\copy installments_payments FROM '/home/train/datasets/home-credit-default-risk/installments_payments.csv' DELIMITERS ',' CSV HEADER;"
+   41  psql -h localhost -W -d homecredit -c "\copy POS_CASH_balance FROM '/home/train/datasets/home-credit-default-risk/POS_CASH_balance.csv' DELIMITERS ',' CSV HEADER;"
+   42   psql -h localhost -W -d homecredit -c "\copy previous_application FROM '/home/train/datasets/home-credit-default-risk/previous_application.csv' DELIMITERS ',' CSV HEADER;"
+   43   psql -h localhost -W -d homecredit -c "\copy application_train FROM '/home/train/datasets/home-credit-default-risk/application_train.csv' DELIMITERS ',' CSV HEADER;"
+   44   psql -h localhost -W -d homecredit -c "\copy application_test FROM '/home/train/datasets/home-credit-default-risk/application_test.csv' DELIMITERS ',' CSV HEADER;"
+   45  ll
+   46  ll bashScripting/
+   47  rm -rf bashScripting/
+   48  ll
+   49  ll Videos/
+   50  ll Downloads/
+   51  ls -h Downloads/
+   52  ls -lh Downloads/
+   53  ls -lh /opt/manual/
+   54  rm -rf /opt/manual/ideaIC-2020.2.2.tar.gz 
+   55  rm -rf /opt/manual/pycharm-community-2020.2.2.tar.gz 
+   56  rm -rf \$HADOOP_HOME
+   57  rm -rf \$KAFKA_HOME
+   58  ls -l /opt/manual/
+   59  ls -l /opt/manual/hadoop/
+   60  ls -l /opt/manual/kafka/
+   61  rm -rf datasets/home-credit-default-risk
+   62  ls -l datasets/
+   63  htop
+   64  sudo shutdown now
+   65  psql -h localhost -W -d homecredit -c "\copy bureau FROM '/home/train/datasets/home-credit-default-risk/bureau.csv' DELIMITERS ',' CSV HEADER;"
+   66  sudo nano /var/lib/pgsql/10/data/pg_hba.conf
+   67  sudo systemctl restart postgresql-10
+   68  psql -h localhost -W -d homecredit -c "\copy bureau FROM '/home/train/datasets/home-credit-default-risk/bureau.csv' DELIMITERS ',' CSV HEADER;"
+   69  psql -h localhost -W -d homecredit -c "\copy bureau_balance FROM '/home/train/datasets/home-credit-default-risk/bureau_balance.csv' DELIMITERS ',' CSV HEADER;"
+   70  sudo shutdown now
+   71  hdfs dfs -ls /user/train
+   72  source venvspark/bin/activate
+   73  ll
+   74  mkdir adsbde
+   75  cd adsbde/
+   76  git init
+   77  git remote add origin https://github.com/erkansirin78/advanced-big-data-datascience-bootcamp.git
+   78  git pull origin master
+   79  cd pyspark/
+   80  ll
+   81  cd ..
+   82  ll datasets/
+   83  start-all.sh
+   84  stop-all.sh
+   85  deactivate
+   86  sudo shutdown now
+   87  source ~/venvspark/bin/activate
+   88  cd ..
+   89  cd data_generator/
+   90  python dataframe_to_kafka.py
+   91  ll
+   92  ls -l
+   93  cd notes/
+   94  cd ~/data-generator/
+   95  ll
+   96  python dataframe_to_kafka.py
+   97  deactivate
+   98  stop-all.sh
+   99  ll
+  100  git clone https://github.com/erkansirin78/data-generator.git
+  101  cd data-generator/
+  102  ll
+  103  source venvspark/bin/activate
+  104  cd adsbde/pyspark/
+  105  jupyter notebook > notebook.log 2>&1 &
+  106  cat /opt/manual/hadoop/sbin/
+  107  ls /opt/manual/hadoop/sbin/
+  108  nano /opt/manual/hadoop/sbin/start-all.sh 
+  109  cat /opt/manual/hadoop/sbin/start-all.sh 
+  110  start-all.sh
+  111  hdfs dfs -mkdir /user/train/datasets
+  112  hdfs dfs -ls /user/train
+  113  hdfs dfs -mv /user/train/Advertising.csv /user/train/datasets
+  114  hdfs dfs -put ~/datasets/churn-telecom/ /user/train/datasets
+  115  wget https://archive.apache.org/dist/spark/spark-2.4.7/spark-2.4.7-bin-hadoop2.7.tgz -P /opt/manual
+  116  cd /opt/manual/
+  117  ll
+  118  tar xzf spark-2.4.7-bin-hadoop2.7.tgz 
+  119  ln -s spark-2.4.7-bin-hadoop2.7 spark2
+  120  mv /opt/manual/spark2/conf/spark-env.sh.template /opt/manual/spark2/conf/spark-env.sh
+  121  nano /opt/manual/spark2/conf/spark-env.sh.template
+  122  nano /opt/manual/spark2/conf/spark-env.sh
+  123  cp /opt/manual/hive/conf/hive-site.xml /opt/manual/spark2/conf/
+  124  cp /opt/manual/hive/lib/postgresql-42.2.14.jar /opt/manual/spark2/jars/
+  125  mv /opt/manual/spark2/conf/spark-defaults.conf.template /opt/manual/spark2/conf/spark-defaults.conf
+  126  nano /opt/manual/spark2/conf/spark-defaults.conf
+  127  zookeeper-server-start.sh -daemon /opt/manual/kafka/config/zookeeper.properties
+  128  kafka-server-start.sh -daemon /opt/manual/kafka/config/server.properties
+  129  kafka-topics.sh --list --bootstrap-server localhost:9092
+  130  kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test1 --partitions 3 --replication-factor 1
+  131  cd ~/adsbde/pyspark/06_spark_streaming/
+  132  ll
+  133  cd kafka/
+  134  ll
+  135  spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0  read_from_kafka.py
+  136  deactivate
+  137  cd ~/adsbde/
+  138  git status
+  139  git add . --all
+  140  git commit -m "churn_prediction_and_scoring_spark2_lightgbm added"
+  141  git push origin master
+  142  sudo shutdown now
+  143  source venvspark/bin/activate
+  144  jupyter notebook > notebook.log 2>&1 &
+  145  cd ~/datasets/
+  146  wget https://raw.githubusercontent.com/erkansirin78/datasets/master/iris.csv
+  147  jupyter notebook stop
+  148  deactivate
+  149  sudo shutdown now
+  150  cd adsbde/
+  151  git status
+  152  git add . --all
+  153  git commit -m "spark homework notebookları düzeltildi"
+  154  git status
+  155  git push origin master
+  156  git pull origin master
+  157  git push origin master
+  158  sudo shutdown now
+  159  source venvspark/bin/activate
+  160  cd adsbde/pyspark/
+  161  jupyter notebook > notebook.log 2>&1 &
+  162  start-all.sh
+  163  vd 05
+  164  cd 05_submit_spark_applications/
+  165  ll
+  166  cat simple_submit.py 
+  167  hdfs dfs -ls /user/train/datasets
+  168   spark-submit --master yarn --deploy-mode client simple_submit.py -i hdfs://localhost:9000/user/train/datasets/Advertising.csv -f csv
+  169  cat simple_submit.py 
+  170  nano simple_submit.py 
+  171   spark-submit --master yarn --deploy-mode client simple_submit.py -i hdfs://localhost:9000/user/train/datasets/Advertising.csv -f csv
+  172  hdfs dfs -ls /user/train/datasets
+  173  hdfs dfs -put ~/datasets/retail_db /user/train/datasets
+  174  hdfs dfs -ls /user/train/datasets
+  175  cd ..
+  176  hdfs dfs -l /user/hive/warehouse
+  177  hdfs dfs -ls /user/hive/warehouse
+  178  hdfs dfs -ls /user/hive/warehouse/order_items_tbl
+  179  cd 06_spark_streaming/
+  180  cd stateless/
+  181  spark-submit --master yarn file_source_csv_stateless.py 
+  182  cd ../statefull/
+  183  spark-submit --master yarn wordcount_from_socket.py 
+  184  deactivate
+  185  exit
+  186  source ~/venvspark/bin/activate
+  187  cd 06_spark_streaming/
+  188  cd ~/data-generator/
+  189  mkdir ~/data-generator/output
+  190  python dataframe_to_log.py -idx True
+  191  ls -l output/
+  192  cd output/
+  193  pwd
+  194  cat my_df_20201121-124413
+  195  cat my_df_20201121-124524
+  196  head ../input/iris.csv 
+  197  nc -lk 9999
+  198  stop-all.sh
+  199  jupyter notebook stop
+  200  deactivate
+  201  cd ~/adsbde/
+  202  git status
+  203  git add . --all
+  204  git commit -m "5. hafta spark dersi sonrası"
+  205  git push origin master
+  206  sudo shutdown now
+  207  cat /var/lib/jenkins/secrets/initialAdminPassword
+  208  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+  209  id jenkins
+  210  usermod -aG jenkins docker
+  211  sudo usermod -aG docker jenkins
+  212  id jenkins
+  213  source ~/venvspark/bin/activate
+  214  ce adsbde/pyspark/
+  215  cd adsbde/pyspark/
+  216  jupyter notebook > notebook.log 2>&1 &
+  217  ll
+  218  tail -f notebook.log 
+  219  start-all.sh
+  220  rm ~/data-generator/output/*
+  221  hdfs dfs -rm -R -skipTrash /user/train/exactly_onece_guarantee
+  222  hdfs dfs -rm -R -skipTrash /user/train/exactly_once_guarantee
+  223  cd ~/data-generator/
+  224  ll
+  225  python dataframe_to_log.py -b 1.0 -z 4 -idx True -r 5
+  226  spark-submit --master yarn \
+  227  python dataframe_to_kafka.py 
+  228  kafka-topics.sh --bootstrap-server localhost:9092 --create --topic test2 --replication-factor 1 --partitions 3
+  229  kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test2
+  230  python dataframe_to_kafka.py 
+  231  hdfs dfs -ls +----+--------------+---------+
+  232  hdfs dfs -ls /user/train/loans_delta
+  233  hdfs dfs -ls /user/train/loans_delta/part-00000-3cf845ed-153a-4dd9-8fef-22d58cdf4908-c000.snappy.parquet
+  234  hdfs dfs -ls /user/train/loans_delta/_delta_log
+  235  exit
+  236  kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test2
+  237  exit
+  238  sudo -u postgres psql
+  239  psql -U gitea -d giteadb
+  240  psql "postgres://gitea@localhost/giteadb"
+  241  psql -U gitea -d giteadb -p gitea
+  242  psql --help | grep password
+  243  psql -U gitea -d giteadb -W gitea
+  244  psql "postgres://gitea@localhost/giteadb"
+  245  mkdir -p /opt/manual/gitea_home
+  246  cd /opt/manual/gitea_home/
+  247  wget -O gitea https://dl.gitea.io/gitea/1.12.5/gitea-1.12.5-linux-amd64
+  248  ll
+  249  ll gitea 
+  250  chmod +x gitea
+  251  ll
+  252  export GITEA_WORK_DIR=/var/lib/gitea/
+  253  sudo echo "export GITEA_WORK_DIR=/var/lib/gitea/" >> /ect/environment
+  254  sudo echo "export GITEA_WORK_DIR=/var/lib/gitea/" >> /etc/environment
+  255  sudo /etc/environment
+  256  ll /etc/environment 
+  257  cat /etc/environment 
+  258  cd ~
+  259  sudo nano /etc/environment
+  260  source /etc/environment 
+  261  echo $GITEA_WORK_DIR 
+  262  cd /opt/manual/
+  263  ll
+  264  sudo mkdir -p /var/lib/gitea/{custom,data,log}
+  265  ll gitea_home/
+  266  ll /var/lib/gitea/
+  267  sudo chown -R git:git /var/lib/gitea/
+  268  cat /etc/passwd | grep git
+  269  useradd git
+  270  sudo useradd git
+  271  sudo chown -R git:git /var/lib/gitea/
+  272  sudo chmod -R 750 /var/lib/gitea/
+  273   sudo mkdir /etc/gitea
+  274  sudo chown root:git /etc/gitea
+  275  sudo chmod 770 /etc/gitea
+  276  sudo cp gitea_home/gitea /usr/local/bin/gitea
+  277  sudo GITEA_WORK_DIR=/var/lib/gitea/ /usr/local/bin/gitea web -c /etc/gitea/app.ini
+  278  ll
+  279  ll gitea_home/
+  280  sudo find / -name "gitea.service"
+  281  cat /home/train/adsbde/ci_cd_gitea_jenkins/notes/gitea.service
+  282  sudo cp /home/train/adsbde/ci_cd_gitea_jenkins/notes/gitea.service /etc/systemd/system
+  283  chmod 755 /etc/systemd/system/gitea.service
+  284  sudo chmod 755 /etc/systemd/system/gitea.service
+  285  sudo systemctl start gitea
+  286  sudo systemctl stop gitea
+  287  sudo systemctl start gitea
+  288  sudo systemctl stop gitea
+  289  sudo systemctl stop jenkins
+  290  kafka-topics.sh --bootstrap-server localhost:9092 --list
+  291  cat /opt/manual/hadoop/etc/hadoop/yarn-site.xml 
+  292  sudo -u postgres psql
+  293  cd ~/adsbde/
+  294  git status
+  295  git pull origin master
+  296  git add . --all
+  297  git commit -m "after 6. wee lessons"
+  298  git push origin master
+  299  git pull origin master
+  300  sudo shutdown now
+  301  source ~/venvspark/bin/activate
+  302  cd 06_spark_streaming/
+  303  cd exactly-once/
+  304  ll
+  305  cat from_file_exactly_once.py
+  306  spark-submit --master yarn from_file_exactly_once.py 
+  307  cd ../kafka/
+  308  ll
+  309  zookeeper-server-start.sh -daemon /opt/manual/kafka/config/zookeeper.properties 
+  310  kafka-server-start.sh -daemon /opt/manual/kafka/config/server.properties 
+  311  spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0  read_from_kafka.py
+  312  spark-submit --master yarn --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.0.0 write_to_kafka.py 
+  313  jupyter notebook stop
+  314  stop-all.sh
+  315  kafka-server-stop.sh 
+  316  zookeeper-server-stop.sh 
+  317  deactivate
+  318  nano /tmp/jenkins-script.sh
+  319  chmod +x /tmp/jenkins-script.sh
+  320  nano /tmp/jenkins-script.sh
+  321  cat /tmp/jenkins-script.sh 
+  322  sudo systemctl start gitea
+  323  cd adsbde/ci_cd_gitea_jenkins/
+  324  ll
+  325  mkdir model-kara-murat
+  326  cd model-kara-murat/
+  327  git init
+  328  git remote add origin http://localhost:3000/jenkins/model-kara-murat.git
+  329  echo "This is simple ML project" >  README.md
+  330  git add README.md
+  331  git commit -m "first commit"
+  332  git push -u origin master
+  333  git config --global user.name "Jenkins Amca"
+  334  git config --global user.email "jenkins@gmail.com"
+  335  nano app.py
+  336  ll
+  337  git add .
+  338  git commit -m "app.py eklendi"
+  339  git push origin master
+  340  systemctl status docker
+  341  docker image build --help
+  342  docker images
+  343  cd ~/adsbde/
+  344  nano .gitignore 
+  345  git status
+  346  git add . --all
+  347  git commit -m "gitea jenkins integration established"
+  348  git push origin master
+  349  git pull origin master
+  350  systemctl stop gitea
+  351  systemctl stop jenkins
+  352  shutdown now
+  353  source venvspark/bin/activate
+  354  start-all.sh
+  355  cd adsbde/pyspark/ll
+  356  cd adsbde/pyspark/
+  357  ll
+  358  cd ..
+  359  ll
+  360  cd model_deployment/
+  361  ll
+  362  cd play/
+  363  ll
+  364  cat README.md 
+  365  docker build -t erkansirin78/iris_classifier:1.0 .
+  366  docker ps
+  367  car README.md 
+  368  cat README.md 
+  369  nano README.md 
+  370  cat README.md 
+  371  docker container stop iris_classifier
+  372  docker container rm iris_classifier
+  373  docker run --name iris_classifier -v $(pwd)/saved_models:/app/saved_models -p 8082:8082 -d erkansirin78/iris_classifier:1.0
+  374  docker ps
+  375  nano README.md 
+  376  git status
+  377  cd ..
+  378  g
+  379  git status
+  380  git add . --all
+  381  git commit -m "ci_cd model deployment with jenkins finished"
+  382  git push origin master
+  383  cd mlflow/
+  384  sudo yum groupinstall 'Development Tools'
+  385  yum install python3-devel
+  386  sudo yum -y install python3-devel
+  387  sudo yum -y install postgresql-libs
+  388  sudo yum -y install postgresql-devel
+  389  pip install psycopg2
+  390  pip install mlflow
+  391  sudo -u postgres psql
+  392  hdfs dfs -mkdir /user/train/mlflow
+  393  mlflow server --backend-store-uri postgresql+psycopg2://train:Ankara06@localhost:5432/mlflow --default-artifact-root hdfs://localhost:9000/user/train/mlflow --host 0.0.0.0  > mlflow_server.log 2>&1 &
+  394  cat mlflow_server.log 
+  395  sudo -u postgres psql
+  396  cd play/
+  397  ll
+  398  cd spark_advertsing_regression/
+  399  ll
+  400  cat train.py 
+  401  ll
+  402  spark-submit --master yarn train.py 
+  403  spark-submit --master yarn batch_prediction.py 
+  404  hdfs dfs -ls hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts
+  405  mlflow models serve -m hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts -h 0.0.0.0 -p 5001 --no-conda
+  406  hdfs dfs -ls hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts
+  407  mlflow models serve -m hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts/model -h 0.0.0.0 -p 5001 --no-conda
+  408  hdfs dfs -ls hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts
+  409  mlflow models serve -m hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts/spark-randomforest -h 0.0.0.0 -p 5001 --no-conda
+  410  pip install pyspark=3.0.0
+  411  pip install pyspark==3.0.0
+  412  mlflow models serve -m hdfs://localhost:9000/user/train/mlflow/1/8d36e7a3073d41279270fb07e7e954ad/artifacts/model -h 0.0.0.0 -p 5001 --no-conda
+  413  hdfs dfs -ls hdfs://localhost:9000/user/train/mlflow/2/a36eb28f7a384bd4a0bd8a280626d748/artifacts
+  414  deactivate
+  415  exit
+  416  docker logs iris_classifier
+  417  curl http://127.0.0.1:5001/iris -H 'Content-Type: application/json' -d '{
+  418      "columns": ["SepalLengthCm", "SepalWidthCm", "PetalLengthCm","PetalWidthCm"],
+  419      "data": [[5.1, 3.5, 1.4, 0.2]]}'
+  420  curl http://127.0.0.1:8082/iris -H 'Content-Type: application/json' -d '{
+  421      "columns": ["SepalLengthCm", "SepalWidthCm", "PetalLengthCm","PetalWidthCm"],
+  422      "data": [[5.1, 3.5, 1.4, 0.2]]}'
+  423  curl http://127.0.0.1:8082/iris -XGET -H 'Content-Type: application/json' -d '{
+  424      "columns": ["SepalLengthCm", "SepalWidthCm", "PetalLengthCm","PetalWidthCm"],
+  425      "data": [[5.1, 3.5, 1.4, 0.2]]}'
+  426  curl http://127.0.0.1:8082/iris -XGET -H 'Content-Type: application/json' -d '{"SepalLengthCm":5.1, "SepalWidthCm":3.5, "PetalLengthCm":1.4 , "PetalWidthCm": 1.2}'
+  427  cd adsbde/
+  428  git status
+  429  git add . --all
+  430  git commit -m "model_deployment/play/README.md and model_deployment/notes/01_model_deployment_with_docker.md updated on VM"
+  431  git push origin master
+  432  git pull origin master
+  433  cd model_deployment/
+  434  cd play/
+  435  ll
+  436  sudo systemctl start gitea
+  437  ll
+  438  mkdir model-kara-murat
+  439  cp * model-kara-murat/
+  440  cp -R * model-kara-murat/
+  441  cp * -r  model-kara-murat/
+  442  ll
+  443  rsync -av --progress * model-kara-murat --exclude model-kara-murat
+  444  ll
+  445  ll model-kara-murat/
+  446  cd model-kara-murat/
+  447  ll
+  448  rm -r model-kara-murat/
+  449  ll
+  450  rm -r *
+  451  ll
+  452  cd ..
+  453  rsync -av --progress * model-kara-murat --exclude model-kara-murat
+  454  ll
+  455  cd model-kara-murat/
+  456  ll
+  457  cd ..
+  458  history
+  459  cd model-kara-murat/
+  460  ll
+  461  git init
+  462  git remote add origin http://localhost:3000/jenkins/model-kara-murat.git
+  463  git add . --all
+  464  git commit -m "First commit from cid/cd jenkins project"
+  465  git push origin master
+  466  git push origin master --force
+  467  sudo systemctl start jenkins
+  468  history | grep curl
+  469  curl http://127.0.0.1:8082/iris -XGET -H 'Content-Type: application/json' -d '{"SepalLengthCm":5.1, "SepalWidthCm":3.5, "PetalLengthCm":1.4 , "PetalWidthCm": 1.2}'
+  470  cp README.md ../
+  471  docker ps
+  472  docker ps | grep iris_classifier
+  473  if [ docker ps | grep iris_classifier ]; then echo "var"; else echo "yok"; fi
+  474  git status
+  475  g
+  476  git remote
+  477  git add . --all
+  478  git commit -m "readme.md modified"
+  479  git push origin master
+  480  curl http://127.0.0.1:8082/iris -XGET -H 'Content-Type: application/json' -d '{"SepalLengthCm":5.1, "SepalWidthCm":3.5, "PetalLengthCm":1.4 , "PetalWidthCm": 1.2}'
+  481  curl http://127.0.0.1:5001/invocations -H 'Content-Type: application/json' -d '{
+  482      "columns": ["TV", "Radio", "Newspaper"],
+  483      "data": [[230.1, 37.8, 69.2],[97.5, 7.6, 7.2]]
+  484  }'
+  485  hdfs dfs -ls /user/train/mlflow
+  486  curl http://127.0.0.1:5001/invocations -H 'Content-Type: application/json' -d '{
+  487      "columns": ["TV", "Radio", "Newspaper"],
+  488      "data": [[97.5, 7.6, 7.2]]
+  489  }'
+  490  cd ..
+  491  cd keras_heart_churn_classification/
+  492  ll
+  493  mlflow experiments create -n keras_heart_classification -l hdfs://localhost:9000/user/train/mlflow
+  494  source ~/venvspark/bin/activate
+  495  mlflow experiments create -n keras_heart_classification -l hdfs://localhost:9000/user/train/mlflow
+  496  rm -r mlruns/
+  497  python3 train.py 
+  498  pip install keras
+  499  python3 train.py 
+  500  pip install tensorflow
+  501  python3 train.py 
+  502  ps -A | grep gunicorn
+  503  ps -A | grep gunicorn pkill -f gunicorn
+  504   pkill -f gunicorn
+  505  ps -A | grep gunicorn
+  506  cd ~/adsbde/
+  507  git status
+  508  git add . --all
+  509  git commit -m "mlflow notes and codes updated"
+  510  git push origin master
+  511  git pull origin master
+  512  deactivate
+  513  stop-all.sh
+  514  sudo systemctl stop gitea
+  515  sudo systemctl stop jenkins
+  516  docker ps
+  517  docker container stop iris_classifier
+  518  sudo systemctl stop docker
+  519  sudo shutdown now
+  520  ll
+  521  ll Downloads/
+  522  sudo systemctl status docker
+  523  docker logout
+  524  ls -al
+  525  ls -al .*
+  526  ll
+  527  rm -rf adsbde/
+  528  ll datasets/
+  529  ll data-generator/
+  530  sudo shutdown
+  531  psql -U airflow_user -d airflow_db
+  532  psql -U train -d traindb
+  533  sudo ls -l /var/lib/pgsql/
+  534  sudo ls -l /var/lib/pgsql/10
+  535  sudo ls -l /var/lib/pgsql/10/data
+  536  sudo ls -l /var/lib/pgsql/10/datapg_hba.conf
+  537  sudo ls -l /var/lib/pgsql/10/data/pg_hba.conf
+  538  sudo vim /var/lib/pgsql/10/data/pg_hba.conf
+  539  psql
+  540  psql -d airflow_db
+  541  ls -l /home/train/venvairflow
+  542  touch /home/train/venvairflow/airflow-webserver.pid
+  543  ls -l /home/train/venvairflow/airflow-webserver.pid
+  544  touch /home/train/venvairflow/airflow-webserver.pid
+  545  ls -l /home/train/venvairflow/airflow-webserver.pid
+  546  cat /etc/sysconfig/airflow
+  547  ls -l /home/train/venvairflow
+  548  ls -l /home/train/venvairflow/airflow.cfg
+  549  sudo systemctl status airflow
+  550  ls -l
+  551  ls -l /home/train/venvairflow/airflow.cfg
+  552  vim /home/train/venvairflow/airflow.cfg
+  553  sed -i 's+sql_alchemy_conn = sqlite:////home/train/airflow/airflow.db+sql_alchemy_conn = postgresql\+psycopg2://airflow_user:airflow_user@localhost/airflow_db+g' venvairflow/airflow.cfg
+  554   cat venvairflow/airflow.cfg | grep sql_alchemy_conn
+  555  sed -i 's+sql_alchemy_conn = sqlite:////home/train/airflow/airflow.db+sql_alchemy_conn = postgresql\+psycopg2://airflow_user:airflow_user@localhost/airflow_db+g' venvairflow/airflow.cfg
+  556   cat venvairflow/airflow.cfg | grep sql_alchemy_conn
+  557  vim /home/train/venvairflow/airflow.cfg
+  558  touch /home/train/venvairflow/airflow-scheduler.pid
+  559  htop
+  560  sudo systemctl stop kafka
+  561  sudo systemctl stop zookeeper
+  562  sudo systemctl stop airflow-scheduler.service 
+  563  sudo systemctl stop airflow
+  564  htop
+  565  source /etc/environment 
+  566  flink run-application -t yarn-application /opt/manual/flink/examples/streaming/TopSpeedWindowing.jar
+  567  yarn application -kill application_1620569875305_0001
+  568  stop-all.sh 
+  569  sudo shutdown now
+  570  source /etc/environment 
+  571  flink run -t yarn-application /home/train/IdeaProjects/flink-scala-examples/target/flink-scala-1.0-SNAPSHOT.jar
+  572  htop
+  573  jps
+  574  stop-cluster.sh 
+  575  flink run -t yarn-application /opt/manual/flink/examples/streaming/TopSpeedWindowing.jar
+  576  flink run-application -t yarn-application /opt/manual/flink/examples/streaming/TopSpeedWindowing.jar
+  577  yarn application -kill application_1620569875305_0002
+  578  flink run-application -t yarn-application /home/train/IdeaProjects/flink-scala-examples/target/flink-scala-1.0-SNAPSHOT.jar
+  579  source /etc/environment
+  580  flink --version
+  581  git clone https://github.com/erkansirin78/data-generator.git
+  582  source venvspark/bin/activate
+  583  cd data-generator/
+  584  ll
+  585  pwd
+  586  python dataframe_to_log.py -shf True -b 1.1 -r 5
+  587  nc -lk 9999
+  588  python dataframe_to_log.py -shf True -b 1.1 -r 5
+  589  python dataframe_to_log.py -shf True -b 0.1 -r 5
+  590  ll
+  591  rm -rf data-generator/
+  592  docker logout
+  593  git config --global user.name "train centos7"
+  594  git config --global user.email "train@vbo.local"
+  595  docker rm iris_classifier
+  596  docker images
+  597  docker image rm e88b2ab169ad 1144120755c3 85146760634c
+  598  docker images
+  599  docker volume ls
+  600  sudo systemctl disable jenkins
+  601  sudo systemctl stop docker
+  602  sudo systemctl stop jenkins
+  603  sudo systemctl disable docker
+  604  vim /opt/manual/hadoop/etc/hadoop/yarn-site.xml 
+  605  sudo find / -name "yarn-site.xml"
+  606  du -hs /tmp
+  607  sudo du -hs /tmp
+  608  du -ls /tmp
+  609  ls -l /tmp
+  610  sudo -u postgres psql
+  611  python3 -V
+  612  python3 -m virtualenv venvairflow
+  613  source venvairflow/bin/activate
+  614  cd venvairflow/
+  615  ll
+  616  cd ..
+  617  pip -V
+  618   pip install --upgrade pip==20.2.4
+  619  pip -V
+  620  sudo yum install postgresql-devel
+  621  sudo yum -y install gcc gcc-c++ python-devel krb5-devel krb5-workstation cyrus-sasl-devel python3-psycopg2
+  622  pip install psycopg2
+  623  AIRFLOW_VERSION=2.0.1
+  624  PYTHON_VERSION="$(python --version | cut -d " " -f 2 | cut -d "." -f 1-2)"
+  625  echo $PYTHON_VERSION 
+  626  CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${AIRFLOW_VERSION}/constraints-${PYTHON_VERSION}.txt"
+  627  echo $CONSTRAINT_URL 
+  628  export AIRLOW_HOME=/home/train/venvairflow
+  629  export AIRFLOW_HOME=/home/train/venvairflow
+  630  unset AIRLOW_HOME 
+  631  echo $AIRFLOW_HOME 
+  632  pip install "apache-airflow[async,postgres,apache.cassandra,apache.hdfs,apache.hive,apache.spark,apache.sqoop,apache.webhdfs,telegram,elasticsearch,docker,mongo,jdbc,ssh]==${AIRFLOW_VERSION}" --constraint "${CONSTRAINT_URL}"
+  633  sudo find / -name "airflow.cfg"
+  634  ll
+  635  ll venvairflow/
+  636  ls -al
+  637  sudo find / -name "*.cfg"
+  638  sudo find / -name "*.cfg" | grep airflow
+  639  sudo vim /etc/environment 
+  640  source /etc/environment 
+  641  export AIRFLOW__CORE__SQL_ALCHEMY_CONN=postgresql+psycopg2://airflow_user:airflow_user@localhost/airflow_db
+  642  airflow db check
+  643  ll
+  644  ll venvairflow/
+  645  ls -l venvairflow/airflow.cfg
+  646  sed -i 's+sql_alchemy_conn = sqlite:////home/train/airflow/airflow.db+sql_alchemy_conn = postgresql\+psycopg2://airflow_user:airflow_user@localhost/airflow_db+g' venvairflow/airflow.cfg
+  647  cat venvairflow/airflow.cfg | grep sql_alchemy_conn
+  648  airflow db init
+  649  airflow users create --username admin --password admin --role Admin -f train -l centos -e train@vbo.local
+  650  sudo bash -c 'cat<<EOF > /etc/systemd/system/airflow.service
+  651  [Unit]
+  652  Description=Airflow webserver daemon
+  653  After=network.target postgresql-10.service
+  654  Wants=postgresql-10.service
+  655  [Service]
+  656  PIDFile=/run/airflow/webserver.pid
+  657  EnvironmentFile=/etc/sysconfig/airflow
+  658  User=train
+  659  Group=airflow
+  660  Type=simple
+  661  ExecStart=/bin/bash -c 'export AIRFLOW_HOME=/home/train/venvairflow; airflow webserver -p 1502 --pid /home/train/venvairflow/airflow-webserver.pid'
+  662  ExecReload=/bin/kill -s HUP $MAINPID
+  663  ExecStop=/bin/kill -s TERM $MAINPID
+  664  Restart=on-failure
+  665  RestartSec=42s
+  666  PrivateTmp=true
+  667  [Install]
+  668  WantedBy=multi-user.target
+  669  EOF'
+  670  sudo bash -c '> /etc/systemd/system/airflow.service'
+  671  sudo vim /etc/systemd/system/airflow.service
+  672  sudo vim  /etc/sysconfig/airflow
+  673  sudo vim /etc/systemd/system/airflow.service
+  674  sudo systemctl start airflow
+  675  sudo systemctl status airflow
+  676  sudo journalctl -xe
+  677  sudo systemctl daemon-reload 
+  678  sudo systemctl status airflow
+  679  sudo systemctl start airflow
+  680  sudo systemctl status airflow
+  681  sudo journalctl -xe
+  682  sudo cat /etc/systemd/system/airflow.service
+  683  sudo cat /etc/sysconfig/airflow
+  684  sudo systemctl start airflow
+  685  sudo journalctl -xe
+  686  ls -l venvairflow/
+  687  ls -l venvairflow/logs/
+  688  ls -l venvairflow/logs/scheduler/
+  689  ls -l venvairflow/logs/scheduler/latest/
+  690  ls -l /var/log
+  691  sudo cat /etc/systemd/system/airflow.service
+  692  airflow webserver -p 1502 --pid /home/train/venvairflow/airflow-webserver.pid
+  693  ps -ef | pgrep gunicorn
+  694  sudo systemctl daemon-reload 
+  695  sudo systemctl start airflow
+  696  sudo systemctl status airflow
+  697  sudo journalctl -xe
+  698  sudo vim /etc/systemd/system/airflow.service
+  699  sudo systemctl daemon-reload 
+  700  sudo systemctl start airflow
+  701  sudo systemctl status airflow
+  702  sudo journalctl -xe
+  703  sudo systemctl daemon-reload 
+  704  sudo systemctl start airflow
+  705  sudo systemctl status airflow
+  706  sudo journalctl -xe
+  707  sudo systemctl daemon-reload 
+  708  sudo systemctl start airflow
+  709  sudo systemctl status airflow
+  710  cat /etc/systemd/system/airflow.service
+  711  cat /etc/sysconfig/airflow
+  712  sudo vim /etc/systemd/system/airflow-scheduler.service
+  713  sudo systemctl daemon-reload 
+  714  sudo systemctl start airflow-scheduler.service 
+  715  sudo systemctl status airflow-scheduler.service 
+  716  vim venvairflow/airflow.cfg 
+  717  sudo systemctl stop airflow
+  718  sudo systemctl stop airflow-scheduler.service 
+  719  sudo systemctl start airflow
+  720  sudo systemctl status airflow
+  721  sudo systemctl start airflow-scheduler.service 
+  722  sudo systemctl status airflow-scheduler.service 
+  723  htop
+  724  sudo systemctl status airflow-scheduler.service 
+  725  sudo systemctl status airflow
+  726  sudo vim /etc/systemd/system/zookeeper.service
+  727  cat /etc/systemd/system/zookeeper.service
+  728  sudo systemctl daemon-reload 
+  729  sudo systemctl start zookeeper
+  730  sudo systemctl status zook
+  731  sudo vim /etc/systemd/system/kafka.service
+  732  sudo systemctl daemon-reload 
+  733  sudo systemctl start kafka
+  734  sudo systemctl status kafka
+  735  cat /etc/systemd/system/kafka.service
+  736  start-all.sh 
+  737  vim /opt/manual/hadoop/sbin/start-all.sh 
+  738  stop-all.sh 
+  739  start-all.sh 
+  740   beeline -n train -u jdbc:hive2://127.0.0.1:10000
+  741  stop-all.sh 
+  742  sudo vim /etc/environment 
+  743  source /etc/environment 
+  744  cd /opt/manual/
+  745  wget https://ftp.itu.edu.tr/Mirror/Apache/flink/flink-1.13.0/flink-1.13.0-bin-scala_2.12.tgz
+  746  tar xzf flink-1.13.0-bin-scala_2.12.tgz 
+  747  ln -s flink-1.13.0 flink-1.13.0
+  748  ln -s flink-1.13.0 flink
+  749  ll
+  750  flink run-application --help
+  751  source /etc/environment 
+  752  cat /etc/environment 
+  753  sudo vim /etc/environment 
+  754  source /etc/environment 
+  755  flink run-application --help
+  756  flink run-application -t local /opt/manual/flink/examples/streaming/TopSpeedWindowing.jar
+  757  start-all.sh 
+  758  sudo vim /etc/environment 
+  759  source /etc/environment 
+  760  echo $HADOOP_CLASSPATH
+  761  sudo reboot now
+  762  sudo shutdown now
+  763  sudo shutdown now
+  764  sudo shutdown now
+  765  sudo shutdown now
+  766  mkdir prod_level
+  767  cd prod_level/
+  768  mkdir linux_basic
+  769  cd linux_basic
+  770  mkdir notes
+  771  cd notes/
+  772  pwd
+  773  cd ~
+  774  pwd
+  775  ls
+  776  ls -l
+  777   ls -l -lh
+  778   ls -l -lr
+  779   ls -l -ltr
+  780   ls -l -lt
+  781   ls -l -la
+  782  history
+  783  cd prod_level
+  784  ls
+  785  cd prod_level/notes/
+  786  cd prod_level/noteslinux_basic
+  787  cd linux_basic/notes
+  788  cd ..
+  789  ls -a
+  790  pwd
+  791  ls -a
+  792  pwd
+  793  cd .
+  794  pwd
+  795  cd ..
+  796  echo "merhaba linux" 
+  797  alias ml="echo "\merhaba linux\""
+  798  cd ..
+  799  clear
+  800  echo "merhaba Linux"
+  801  alias ml="echo \"merhaba linux\""
+  802  ml
+  803  clear
+  804  env
+  805  MY_NAME = Baran
+  806  MY_NAME=Baran
+  807  echo $MY_NAME
+  808  MY_NAME=Baran Can
+  809  MY_NAME=Baran\Can
+  810  echo $MY_NAME
+  811  MY_NAME=Baran\ Can
+  812  echo $MY_NAME
+  813  export MY_NAME
+  814  env
+  815  unset MY_NAME
+  816  env
+  817  echo $MY_NAME
+  818  echo $PATH
+  819  /usr/local/bin
+  820  ls /usr/local/bin
+  821  pip -V
+  822  /usr/local/bin/pip -V
+  823  cm
+  824  clear
+  825  nano simple_script.sh
+  826  ll
+  827  ./simple_script.sh
+  828  chmod +x simple_script.sh
+  829  ./simple_script.sh
+  830  nano simple_script.sh
+  831  chmod +x simple_script.sh
+  832  nano simple_script.sh
+  833  ./simple_script.sh
+  834  cd ..
+  835  simple_script.sh
+  836  ./simple_script.sh
+  837  cd notes/
+  838  pwd
+  839  home/train/prod_level/linux_basic/notes
+  840  home/train/prod_level/linux_basic/notes/sample_script.sh
+  841  cd home/train/prod_level/linux_basic
+  842  cd home/train
+  843  cd home/
+  844  pwd
+  845  lr
+  846  l
+  847  lr
+  848  ls
+  849  cd prod_level
+  850  home/train/prod_level/linux_basic/notes/simple_script.sh
+  851  /home/train/prod_level/linux_basic/notes/simple_script.sh
+  852  export PATH="/home/train/prod_level/linux_basic/notes:$PATH"
+  853  echo $PATH
+  854  ll
+  855  simple_script.sh
+  856  cd ~
+  857  simple_script.sh
+  858  type ls
+  859  type cd
+  860  type nano
+  861  which nano
+  862  clear
+  863  cd prod_level/linux_basic/notes/
+  864  wget https://raw.githubusercontent.com/erkansirin78/datasets/master/words.txt
+  865  ls
+  866  grep ^Mur words.txt
+  867  grep -i  ^Mur words.txt
+  868  grep -i ^mur words.txt
+  869  grep -in ^mur words.txt
+  870  grep -in $kuş  words.txt
+  871  grep -in kuş$ words.txt
+  872  grep -in "k.ş" words.txt
+  873  grep m[nu]k  words.txt
+  874  grep m[au]k  words.txt
+  875  grep m[a-z]k  words.txt
+  876  grep m[^ae]k  words.txt
+  877  grep M[^ae]k  words.txt
+  878  wget https://raw.githubusercontent.com/erkansirin78/datasets/master/sample_tc_kimlik_names_numbers.txt
+  879  grep [111] sample_tc_kimlik_names_numbers.txt 
+  880  grep [0-4] sample_tc_kimlik_names_numbers.txt 
+  881  grep "[0-9]{11\}" sample_tc_kimlik_names_numbers.txt 
+  882  grep [0-9]{11\} sample_tc_kimlik_names_numbers.txt 
+  883  grep [0-9]\{11\} sample_tc_kimlik_names_numbers.txt 
+  884  grep "[0-9]\{11\}" sample_tc_kimlik_names_numbers.txt 
+  885  grep "[A-Za-z]\{6\}" sample_tc_kimlik_names_numbers.txt 
+  886  grep '^Ak\ş$' words.txt
+  887  grep "^Ak\ş$" words.txt
+  888  grep '^Ak\|ş$' words.txt
+  889  clear
+  890  cd ~
+  891  lr
+  892  ls
+  893  cd prod_level
+  894  cd notes
+  895  ls
+  896  cd linux_basic/notes
+  897  mkdir my_folder
+  898  ls
+  899  touch my_file
+  900  ls
+  901  cd my_folder
+  902  cd ..
+  903  pwd
+  904  cd my_folder
+  905  ll
+  906  cd ..
+  907  pwd
+  908  ll
+  909  ls
+  910  rm my_file
+  911  rm -r my_folder
+  912  ls
+  913  touch my_file1
+  914  mkdirr my_folder1
+  915  mkdir my_folder1
+  916  cp my_file1 my_folder1/
+  917  ls m_folder1
+  918  ls m_folder1/
+  919  ls
+  920  ls my_folder1/
+  921  cat my_folder1/my_file1 
+  922  rm  my_folder1/my_file1 
+  923  ls
+  924  rm  my_folder1
+  925  rm  my_folder1/
+  926  ls my_folder1/
+  927  mv my_file1 my_folder1/
+  928  ls
+  929  mv my_folder1/my_file1 .
+  930  mv my_folder1 my_file_renamed
+  931  mv my_file__reanemd my_folder1
+  932  mv my_file_reanemd my_folder1
+  933  mv my_file_renamed my_folder1
+  934  mv  my_file1 my_file_renamed
+  935  cp my_file_renamed my_folder1/
+  936  mkdir second_folder
+  937  cp my_folder1/ second_folder/
+  938  cp -r my_folder1/ second_folder/
+  939  mv my_folder1 my_folder_rename
+  940  clear
+  941  touch output.txt
+  942  cat output.txt 
+  943  nano output.txt 
+  944  cat output.txt 
+  945  set "1d" onecmd 
+  946  cat output.txt 
+  947  set "1d" output.txt 
+  948  cat output.txt 
+  949  set '1d' output.txt 
+  950  cat output.txt 
+  951  set '1d' output.txt
+  952  sed '1d' output.txt
+  953  cat output.txt 
+  954  sed -i '1d' output.txt
+  955  cat output.txt 
+  956  sed 's+line+line_replaced+g' file
+  957  sed 's+line+line_replaced+g' output.txt 
+  958  sed '2,4s+line+line_replaced+g' output.txt 
+  959  less output.txt
+  960  less ~/datasets/Advertising.csv
+  961  more  ~/datasets/Advertising.csv
+  962  head ~/datasets/Advertising.csv
+  963  head -n 5  ~/datasets/Advertising.csv
+  964  ls -l /etc
+  965  ls -l /etc | grep ssh
+  966  touch hello.sh
+  967  touch second_file.sh
+  968  git 
+  969  git init
+  970  git commit
+  971  git add .
+  972  git status
+  973  git config --global user.name "Baran Can Ercan"
+  974  git config --global user.email "barancanercan@gmail.com"
+  975  git config --global color.ui auto
+  976  git user
+  977  git commit -m "second_file is added."
+  978  git branch -M main
+  979  git remote add orign git@github.com:barancanercan/github-class.git
+  980  git push -u origin main
+  981  git remote -v
+  982  git remote add origin git@github.com:barancanercan/github-class.git
+  983  git remote -v
+  984  git push -u origin main
+  985  git config --global user.name
+  986  git config --global user.email
+  987  git remote add origin git@github.com:barancanercan/github-class.git
+  988  git branch -M main
+  989  git push -u origin main
+  990  UserKnownHostsFile ~/.ssh/known_hosts
+  991  git remote add github-class https://github.com/barancanercan/github-class.git
+  992  git pull origin master
+  993  git pull origin main
+  994  git fetch origin
+  995  git ls-remote --heads origin
+  996  git pull origin main
+  997  clear
+  998  ssh-keygen -t rsa -b 4096 -C "barancanercan@gmail.com"
+  999  cd /home/train/.ssh/id_rsa
+ 1000  ssh-keygen -t rsa -b 4096 -C "barancanercan@gmail.com"
+ 1001  eval ssh-agent -s
+ 1002  ssh-add ~/.ssh/id_rsa
+ 1003  cat ~/.ssh/id_rsa.pub
+ 1004  ssh -T git@github.com
+ 1005  git init
+ 1006  git add README.md
+ 1007  git commit -m "first commit"
+ 1008  git branch -M main
+ 1009  git remote add origin git@github.com:barancanercan/github-class.git
+ 1010  git push -u origin main
+ 1011  ls l
+ 1012  ls -l
+ 1013  ls -al
+ 1014  git pull orign main
+ 1015  ls -a
+ 1016  ls -al
+ 1017  history > history.txt
